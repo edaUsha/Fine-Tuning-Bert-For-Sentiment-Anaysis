@@ -9,7 +9,7 @@ The dataset covers diverse text sources including tweets, product reviews, and m
 Built using **HuggingFace transformers** and datasets libraries, the pipeline handles tokenization via **AutoTokenizer**, dynamic padding via **DataCollatorWithPadding**.
 
 
-Training setup:
+## Training setup:
 
 Tokenization with AutoTokenizer and truncation on the "text" field.
 
@@ -21,7 +21,8 @@ Training performed with Trainer and TrainingArguments (learning rate 2e-5, batch
 
 Deployment:
 
-Model saved to results/ and optionally uploaded to Hugging Face Hub as edaUsha/Fine_Tuning_Bert_For_Sentiment_Anaysis.
+Model saved to results/ and  uploaded to Hugging Face Hub as [edaUsha/Fine_Tuning_Bert_For_Sentiment_Anaysis.
+](https://huggingface.co/edaUsha/Fine_Tuning_Bert_For_Sentiment_Anaysis/blob/main/Fine_Tuning_Bert_For_Sentiment_Anaysis.ipynb)
 
 Metrics
 Evaluation uses a custom compute_metrics function with accuracy_score and roc_auc_score from sklearn.metrics.
@@ -30,15 +31,6 @@ Probability scores are obtained by applying softmax to the model logits.
 
 Metrics computed:
 
-Accuracy – fraction of correctly predicted labels.
-
-Macro ROC‑AUC (OvR) – multi‑class ROC‑AUC using one‑vs‑rest averaging.
-
-Example validation results:
-
-python
-{'eval_loss': 0.5747562646865845, 'eval_accuracy': 0.758, 'eval_auc': 0.915}
-So, on the validation set the model achieves:
 
 Validation loss: 0.5748
 
