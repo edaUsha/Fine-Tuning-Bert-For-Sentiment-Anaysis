@@ -3,8 +3,9 @@
 ## Deployment:
 https://github.com/edaUsha/Fine-Tuning-Bert-For-Sentiment-Anaysis/issues/1#issue-4607607165
 <p align="center" width="100%">
-  <video src="https://github.com/user-attachments/assets/YOUR_VIDEO_ID" width="80%" controls></video>
+  <video src="[https://github.com/user-attachments/assets/YOUR_VIDEO_ID](https://github.com/user-attachments/assets/062efd4d-e0bb-462a-b7a3-8972ff6eb4fd)" width="80%" controls></video>
 </p>
+
 [Model Upload to HuggingFace Spaces as [[edaUsha/Fine_Tuning_Bert_For_Sentiment_Anaysis.
 ](https://huggingface.co/edaUsha/Fine_Tuning_Bert_For_Sentiment_Anaysis/blob/main/Fine_Tuning_Bert_For_Sentiment_Anaysis.ipynb)](https://edausha-fine-tuning-bert-for-sentiment-analysis.hf.space/?__theme=light&deep_link=XG6aZbZJwwE)](https://edausha-fine-tuning-bert-for-sentiment-analysis.hf.space/?__theme=light&deep_link=XG6aZbZJwwE)
  
