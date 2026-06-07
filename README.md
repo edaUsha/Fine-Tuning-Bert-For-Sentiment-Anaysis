@@ -4,4 +4,14 @@ This project fine-tunes BERT (bert-base-uncased) for a **3-class sentiment class
 
 The dataset covers diverse text sources including tweets, product reviews, and movie reviews, pre-processed to remove duplicates and null values for consistency. 
 
-Built using **HuggingFace transformers** and datasets libraries, the pipeline handles tokenization via **AutoTokenizer**, dynamic padding via **DataCollatorWithPadding**, and training via the Trainer API — making it easy to reproduce or adapt for similar NLP classification tasks.
+Built using **HuggingFace transformers** and datasets libraries, the pipeline handles tokenization via **AutoTokenizer**, dynamic padding via **DataCollatorWithPadding**.
+
+
+
+``from transformers import pipeline
+
+model_id = "edaUsha/Fine_Tuning_Bert_For_Sentiment_Anaysis"
+clf = pipeline("text-classification", model=model_id)
+
+print(clf("I really loved this movie!"))
+print(clf("This was the worst experience ever."))``
