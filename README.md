@@ -2,8 +2,8 @@
 
 ## Deployment:
 
-Model saved to results/ and  uploaded to Hugging Face Hub as [[edaUsha/Fine_Tuning_Bert_For_Sentiment_Anaysis.
-](https://huggingface.co/edaUsha/Fine_Tuning_Bert_For_Sentiment_Anaysis/blob/main/Fine_Tuning_Bert_For_Sentiment_Anaysis.ipynb)](https://edausha-fine-tuning-bert-for-sentiment-analysis.hf.space/?__theme=light&deep_link=XG6aZbZJwwE)
+[Model Upload to HuggingFace Spaces as [[edaUsha/Fine_Tuning_Bert_For_Sentiment_Anaysis.
+](https://huggingface.co/edaUsha/Fine_Tuning_Bert_For_Sentiment_Anaysis/blob/main/Fine_Tuning_Bert_For_Sentiment_Anaysis.ipynb)](https://edausha-fine-tuning-bert-for-sentiment-analysis.hf.space/?__theme=light&deep_link=XG6aZbZJwwE)](https://edausha-fine-tuning-bert-for-sentiment-analysis.hf.space/?__theme=light&deep_link=XG6aZbZJwwE)
  
 ## Brief
 
