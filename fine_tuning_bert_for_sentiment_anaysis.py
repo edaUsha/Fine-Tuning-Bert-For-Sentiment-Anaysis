@@ -9,7 +9,6 @@ Original file is located at
 **Imports**
 """
 
-pip install evaluate
 
 from datasets import DatasetDict,Dataset, load_dataset
 from transformers import AutoTokenizer,AutoModelForSequenceClassification, TrainingArguments, Trainer
@@ -65,24 +64,13 @@ accuracy=evaluate.load("accuracy")
 auc_score=evaluate.load("roc_auc")
 
 def compute_metrics(eval_pred):
-  predictions,labels=eval_pred
+    predictions, labels = eval_pred
+    probabilities = np.exp(predictions) / np.exp(predictions).sum(-1, keepdims=True)
+    auc = np.round(roc_auc_score(labels, probabilities, multi_class="ovr", average="macro"),3)
 
-  #apply softmax to get probabilities
-  probabilities= np.exp(predictions)/np.exp(predictions).sum(-1,keepdims=True)
-
-  #use probabilities of the positive class for ROC AUC
-  positive_class_probs=probabilities[:,1]
-
-  #compute auc
-  auc=np.round(auc_score.compute(prediction_scores=positive_class_probs,references=labels)['roc_auc'],3)
-
-  #predict most probable class
-  predicted_classes=np.argmax(predictions,axis=1)
-
-  #compute accuracy
-  accuracy_score=np.round(accuracy.compute(predictions=predicted_classes,references=labels)['accuracy'],3)
-
-  return {"accuracy":accuracy_score,"auc":auc}
+    predicted_classes = np.argmax(predictions, axis=1)
+    acc = np.round(accuracy_score(labels, predicted_classes), 3)
+    return {"accuracy": acc, "auc": auc}
 
 """**Training Parameters**"""
 
@@ -131,16 +119,13 @@ print(eval_results)
 
 from transformers import pipeline
 
-# Load your saved model into a pipeline for easy testing
-classifier = pipeline("text-classification", model="results")
-result = classifier("what a bad day!")
-print(result)
+model_id = "edaUsha/Fine_Tuning_Bert_For_Sentiment_Anaysis"
 
-from huggingface_hub import login, upload_folder
+clf = pipeline(
+    "text-classification",   # task
+    model=model_id
+)
 
-# (optional) Login with your Hugging Face credentials
-login()
-
-# Push your model files
-upload_folder(folder_path=".", repo_id="edaUsha/Fine_Tuning_Bert_For_Sentiment_Anaysis", repo_type="model")
+print(clf("I really loved this movie!"))
+print(clf("This was the worst experience ever.")))
 
